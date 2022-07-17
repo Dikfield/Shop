@@ -16,8 +16,12 @@ namespace Shop.EndPoints.Controller
 
             try
             {
+                model.role = "employee";
                 context.Users.Add(model);
                 await context.SaveChangesAsync();
+
+                //Esconde a senha
+                model.Password = "";
                 return Results.Created($" user criado {model}", model);
             }
             catch(Exception)

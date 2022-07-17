@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MiniValidation;
@@ -8,6 +9,7 @@ namespace Shop.EndPoints.Products
     public class DeleteProduct
     {
         public static string Route => "/products/{id}";
+        [Authorize (Roles = "manager")]
         public static async Task<IResult> Action ([FromRoute] int id, [FromServices] DataContext context)
         {
             if(!MiniValidator.TryValidate(id,out var errors))

@@ -2,12 +2,14 @@ using Microsoft.AspNetCore.Mvc;
 using Shop.Models;
 using MiniValidation;
 using Shop.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Shop.EndPoints.Products
 {
     public class PostProduct
     {
         public static string Route => "/products";
+        [Authorize (Roles = "employee")]
         public static async Task<IResult> Action ([FromBody] Product product, [FromServices] DataContext context)
         {
             if(!MiniValidator.TryValidate(product, out var errors))

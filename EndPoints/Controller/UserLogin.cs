@@ -23,6 +23,8 @@ namespace Shop.EndPoints.Controller
                     return Results.NotFound("Usuário ou senha inválidos");
 
                 var token = TokenService.GenerateToken(user);
+
+                user.Password = "";
                 return Results.Ok(new {user = user, token = token});
         }
     }

@@ -62,3 +62,9 @@ D:\documents\codes\Shop\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.W
 D:\documents\codes\Shop\bin\Debug\net6.0\Humanizer.dll
 D:\documents\codes\Shop\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\documents\codes\Shop\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\documents\codes\Shop\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\documents\codes\Shop\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\documents\codes\Shop\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+D:\documents\codes\Shop\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\documents\codes\Shop\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\documents\codes\Shop\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

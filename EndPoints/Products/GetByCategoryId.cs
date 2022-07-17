@@ -2,12 +2,14 @@ using Microsoft.AspNetCore.Mvc;
 using MiniValidation;
 using Shop.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Shop.EndPoints.Products
 {
     public class GetByCategoryId
     {
         public static string Route => "/products/category/{id:int}";
+        [AllowAnonymous]
         public static async Task<IResult> Action ([FromRoute] int id,[FromServices] DataContext context)
         {
             if(!MiniValidator.TryValidate(id,out var errors))

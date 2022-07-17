@@ -3,12 +3,14 @@ using Shop.Models;
 using MiniValidation;
 using Shop.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Shop.EndPoints.Categories
 {
     public class Put
     {
         public static string Route => "/categories/{id:int}";
+        [Authorize (Roles = "employee")]
         public static async Task <IResult> Action (int id, [FromBody]Category model,[FromServices] DataContext context)
         {
             if(model.Id !=id)

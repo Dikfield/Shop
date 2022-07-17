@@ -2,12 +2,14 @@ using Microsoft.AspNetCore.Mvc;
 using Shop.Models;
 using MiniValidation;
 using Shop.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Shop.EndPoints.Categories
 {
     public class Post
     {
         public static string Route => "/categories";
+        [Authorize (Roles = "employee")]
         public static async Task<IResult> Action ([FromBody] Category category, [FromServices] DataContext context)
         {
             if(!MiniValidator.TryValidate(category, out var errors))
